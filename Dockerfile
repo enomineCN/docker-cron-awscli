@@ -12,9 +12,8 @@ RUN echo "Asia/Shanghai" > /etc/timezone \
 RUN pip install pip setuptools --upgrade
 RUN pip install awscli --upgrade
 
-COPY start.sh sqs_send.sh /bin/
-RUN chmod +x /bin/start.sh /bin/sqs_send.sh
-RUN chmod +x /bin/start.sh /bin/sns_send.sh
+COPY start.sh sqs_send.sh sns_send.sh /bin/
+RUN chmod +x /bin/start.sh /bin/sqs_send.sh /bin/sns_send.sh
 
 # Add crontab file in the cron directory
 ONBUILD ADD crontab.txt /etc/cron.d/thecron
