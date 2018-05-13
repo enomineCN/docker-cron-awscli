@@ -14,6 +14,7 @@ RUN pip install awscli --upgrade
 
 COPY start.sh sqs_send.sh /bin/
 RUN chmod +x /bin/start.sh /bin/sqs_send.sh
+RUN chmod +x /bin/start.sh /bin/sns_send.sh
 
 # Add crontab file in the cron directory
 ONBUILD ADD crontab.txt /etc/cron.d/thecron
