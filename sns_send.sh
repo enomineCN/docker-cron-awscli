@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 source /root/envs.sh
 
 exec >>/var/log/cron.log
