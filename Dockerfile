@@ -6,8 +6,8 @@ RUN apt-get update \
  && apt-get install --no-install-recommends -y \
  locales tzdata python python-pip cron
 
-RUN echo "Asia/Shanghai" > /etc/timezone \
-  && dpkg-reconfigure -f noninteractive tzdata
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+ && dpkg-reconfigure -f noninteractive tzdata
 
 RUN pip install pip setuptools --upgrade
 RUN pip install awscli --upgrade
